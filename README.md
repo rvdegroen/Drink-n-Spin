@@ -1,146 +1,88 @@
-# Real-Time Web @cmda-minor-web 2022 - 2023
+# License
 
-## Table of Contents
-- [Synopsis](#synopsis)
-- [Description](#description)
-- [Communication](#communication)
-- [Goals](#goals)
-- [Grading](#grading)
-- [Programme](#programme)
+The source code is distributed under the GPL-3.0 license. See LICENSE.md for more information.
 
-## Synopsis
-- Course: Real-Time Web
-- Course Coordinator: Justus Sturkenboom ([@ju5tu5](https://github.com/ju5tu5))
-- Minor Coordinator(s): Robert Spier ([@roberrrt-s](https://github.com/roberrrt-s)) & Vasilis van Gemert ([@vasilisvg](https://github.com/vasilisvg))
-- Lecturers: Shyanta Vleugel ([@shyanta](https://github.com/shyanta)) & Justus Sturkenboom ([@ju5tu5](https://github.com/ju5tu5))
-- Student Assistants: 
-- Credit: 3 ECTS credits
-- Academic year: 2022-2023
-- Programme: Communication and Multimedia Design (full time bachelor)
-- Language: Dutch instructions and English resources
+# About Bar Chat
 
-## Description
-During this course you will learn how to build a real-time application. You will learn techniques to setup an open connection between the client and the server. This will enable you to send data in real-time both ways, at the same time.
+This chatroom is a real time webapplication. This means that there's a continues stream of connection between multiple computers.
 
-## Communication
-- [Github](https://github.com/cmda-minor-web/real-time-web-2223)
-- [Microsoft Teams](https://teams.microsoft.com/l/channel/19%3a61df853840064eae8ae6fc2dc9fc4566%40thread.tacv2/09%2520Real%2520Time%2520Web?groupId=c8b97eb6-ad53-4531-ad66-5c3c6297951c&tenantId=0907bb1e-21fc-476f-8843-02d09ceb59a7)
-- [Brightspace](https://dlo.mijnhva.nl/d2l/home/456154)
+## Functionalities
 
-If you have questions:
-- [Look at the additional resources]()
-- [Use a search engine like startpage](https://www.startpage.com/)
-- [Ask questions on MS Teams](https://teams.microsoft.com/l/channel/19%3a61df853840064eae8ae6fc2dc9fc4566%40thread.tacv2/09%2520Real%2520Time%2520Web?groupId=c8b97eb6-ad53-4531-ad66-5c3c6297951c&tenantId=0907bb1e-21fc-476f-8843-02d09ceb59a7) (please help each other!)
-- [Contact a student-assisstant](#synopsis)
-- [Contact a lecturer](#synopsis)
+This application has the following functionalities:
 
-## Goals
-After finishing this program you can:
-- _deal with real-time complexity;_
-- _handle real-time client-server interaction;_
-- _handle real-time data management;_
-- _handle multi-user support._
+User:
 
-## Grading
-Your efforts will be graded using a single point rubric (see below). You will have to pass the criterion (centre column) to pass the course. During the test you will be consulted and will be given feedback on things we think deficient and things we think are an improvement on the criterion.
+- [] The user can use a username
+- [] The user is able to choose a profile picture
+- [] The user can see when someone is typing
+- [] The user can choose to listen to a radio
 
-| Deficiency | Criterion | Improvement |
-|:--|:--|:--|
-|  | *Project* Your app is working and published on Heroku. Your project is thoroughly documented in the `README.md` file in your repository. Included are a description of the data-lifecycle, real-time events and external data source used by your app. |  |
-|  | *Complexity* You’ve implemented enough real-time functionality for us to test your comprehension of the subject. A lot of functionality is self-written. You are able to manipulate online examples live. |  |
-|  | *Client-server interaction* By interacting with the app, a user can influence the data model of the server in real time by directly modifying data OR by influencing API requests between server and source. The student has set up the data manipulations. |  |
-|  | *Data management* The server maintains a data model and each client is continuously updated with the correct data. |  |
-|  | *Multi-user support* Multiple clients can connect to the server. Interaction works as expected and is not dependent on the number of clients. You can explain how your app approaches this. |  |
+Hosting:
 
-## Programme
+- [] The user can create a chatroom and make themselves an "host" of that chatroom
+- [] The host is able to kick users
+- [] The host is able to lock the chatroom with a password
+- [] The host is able to decide how many players can join a chatroom
+- [] The host can change the background of the chat
 
-### Daily Schedule
-To keep things simple we use a daily schedule that will be used during normal course days (monday/tuesday). We make exceptions for fridays, on these days a different schedule will be given.
+Chat:
 
-| Time | Who | Activity |
-|:--|:--|:--|
-| *~09:00* | *(Shyanta \|\| Justus)* | *Standup* |
-| 09:30 | Tribe *+(Shyanta \|\| Justus)* | Talk with crucial information (make sure you attend!) |
-| 11:00 | Tribe | Work on the (day)assignment |
-|  | Per table *+(Shyanta \|\| Justus)* | Standup |
-| 13:00 | Tribe *+(Student assistants)* | Continue work on the (day)assignment |
-| 16:00ish | Tribe | Wrapup |
+- [] You can send one image with a max. amount of kb in the chat to make sure the application is able to handle the traffix
+- [] There's a max. amount of input characters to make sure the application is able to handle the traffic
+- [] There's a timestamp
+- [] When a chatroom is empty with no users, the chatroom will disappear
+- [] When you are offline, the app will say that the chat cannot be updated due to a loss of connection
 
-### Week 1 - Getting a grip
-Goal: Build and deploy a simple but unique real-time app
+History:
 
-#### Monday 17 April 
-**Talk subjects:** Hit the ground running... [(slides)](https://docs.google.com/presentation/d/1MLSch_uKNEDyfz7fo71jbJrprunxQwd9GtgTse8wWpo) Course objective and explanation of the assignment, examples from last year, explanation of real-time, (live coded) bare bone chat app and deployment on Heroku.\
-**Day assignment:** [(assignment)](./course/week-1.md#assignment-1-make-it-so) Make it so *(as a team)*: Implement (code/style/discuss/deploy) basic chat (or other realtime) functionality on your teampage!
+- [] A chat history
+- [] A max. amount of messages being shows to save memory
+- [] A part of the history messages are saved in the database to save memory
 
-#### Tuesday 18 April
-**Talk subjects:** My first realtime web app! [(slides)](https://docs.google.com/presentation/d/18eftO3epzIXDjdwl3cn5Wq99fkQYCUnExUqq9P72A3k) Short recap, (local) data management, using (wire) flows for realtime web apps.\
-**Day assignment:** [(assignment)](./course/week-1.md#assignment-2-make-it-so) Make it so *(individually)*. i) Create (code/style/discuss/deploy) a chat app (or other realtime functionality) based on the examples and ii) add your own unique feature!
+Bartender:
 
-#### Friday 21 april
+- [] The user is able to play a bartender game in the chatroom
+- [] Each drink that's been mixed, gets a score, the goal is to beat the highscore within the room
+- [] The highscore disappears once the room is empty and the room itself will dissolve
 
-Friday ~~afternoon~~ morning we will have a [peer review session](./course/peer-review.md). You will read, comment and fire issues on each others code. Doing this is really good for your programming insight and helps others refining/refactoring their code.
+# Live demo
 
-| Time | Who | Activity |
-|:--|:--|:--|
-| 9:30 | Tribe *+(Shyanta \|\| Justus)* | Peer review |
-| 11:00 | Tribe *+(Shyanta \|\| Justus)* | Afronding Peer review |
+This is the link to the live demo of this application: https://basic-chatroom-production-6d2c.up.railway.app/
 
-### Week 2 - Sockets and data
-Goal: Store, manipulate and share data between server-client   
+# Installation
 
-#### Monday 24 April
-**Talk subjects:** Data driven development?! [(slides)](https://docs.google.com/presentation/d/1WC1DxkQm2eUCTQp7dEfv0cTVMK7zlg3der0P0qP7S5I) Feedback about last week, final assignment and conditions (rubric), explanation of data management, Long polling vs Websockets. \
-**Day assignment:** [(assignment)](./course/week-2.md#assignment-1-proof-of-concept) (Proof of) Concept *(individually)*. i) Create a (3 > 1) concept based on existing data from an API and ii) map this data using modelling techniques.
+To install the application locally you can follow these next steps:
 
-#### Tuesday 25 April
-**Talk subjects:** Above all else, show the data. [(slides)](https://docs.google.com/presentation/d/1tW4klrDjt1AfWte311uKkfQYwaHwokzQ-ue3a4VphqA) Securing real-time web apps, offline support, the publication/subscription model\
-**Day assignment:** [(assignment)](./course/week-2.md#assignment-2-proof-of-concept) Proof of concept *(individually)*: i) Create (code/style/discuss/deploy) part of the core functionality for your concept and ii) show the  corresponding data lifecycle diagram.
+1. Clone the repository with `git clone [LINK]`
+2. Go into the folder that you cloned and open the project in your code editor
+3. Install the dependencies with `npm i` in the terminal
 
-### Week 3 - Dealing with multiple users
-Goal: Handle data sharing and multi-user support 
+# Process
 
-#### Monday 8 May
-**Talk subjects:** Roll your own... [(slides) ](https://docs.google.com/presentation/d/1ACuUJ-B19hgFN2CCTYH8ClN0WD69ok8ZVnkRGbU0FjA) Data management, the functional programming trinity (map, filter and reduce). OAuth?!
-**Day assignment:** [(assignment)](./course/week-3.md#assignment-1-data-management)
+In this section I'll be talking more about the process. This is more relevant for teachers who will be grading this project.
 
-#### Tuesday 9 May
-**Talk subjects:** Not ignoring the UI-Stack! [(slides)](). Usability, feedback, feedforward etc. in real-time web apps, (case study) postNL loader and FAQ.
-**Day assignment:** [(assignment)](./course/week-3.md#assignment-2-user-testing)
+## Ideas
 
-#### Friday 12 May
-We will have a final [peer review session](./course/peer-review.md). You will read, comment and fire issues on each others code. Doing this helps others dotting the i’s on their project.
+In week 1 I came up with 3 ideas as listed below:
 
-| Time | Who | Activity |
-|:--|:--|:--|
-| 14.00 | Tribe *+(Shyanta \|\| Justus)* | Peer review |
-| 15.30 | Tribe *+(Shyanta \|\| Justus)* | Finalize your assignment |
-| 16.00 | Tribe *+(Shyanta \|\| Justus)* | (drinks?!) |
+1. Create an application in which users can make chat rooms for game-related content. In the chat, users can show different covers of games and even browse through a library of pictures related to the game. The chat room will be named after the game that is shown in the chatroom, so that people can join a room depending on their interests.
 
-<!-- Here are some hints for your projects Readme.md! -->
+2. Create a chatroom in which people can make their own chat rooms. People who create the chat room will be hosts and will have special functionalities unlike other users, such as being able to change the background of the room or kick someone out of the room. Additionally, the host can choose a radio station to which people will listen. Other users will only be able to adjust the volume of the radio, but not the channel.
 
-<!-- Start out with a title and a description -->
+3. People can create a chatroom, and other users can join a certain chatroom based on the code that the chatroom has. If you don't have the code, you're not able to join the chatroom as a user.
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+4. Create an application in which users can guess in chat who the speaker is of a quote from the show "The Office (US)". Once the correct name has been found, the correct user will be given coins, which they can use to customize their chat (such as chat bubble color, text color, and choosing their own background color).
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+5. Create a chatroom with a bar theme. There's a jukebox: each user can choose their own radio channel to listen to. They also play a small bartender game and mix drinks that gets a certain score. The score depends on certain recipes.
 
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
+## Chosen Idea
 
-<!-- Maybe a table of contents here? 📚 -->
+For my final assingment, I went with my 5th idea, simply, because I love the vibe of certain bars and playing a little bar game, really fits the theme. It makes it more interactive and a bit more fun. I also have an idea of what kind of radio channels I want to have in my chatrooms and those are more smooth jazz or bossa nova jazz related, because I personally like to hear those kind of tracks in a bar.
 
-<!-- ☝️ replace this description with a description of your own work -->
+## Inspiration
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+I looked up for inspiration in old screenshots I saved myself from old chats I have visited in the past. These screenshots are from around 2014 and the websites don't exist anymore (unfortunately), but they still hold a special place in my heart, as I have spent a lot of my time in those chatrooms.
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+## Prototype
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
-<!-- This would be a good place for your data life cycle ♻️-->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
-
-<!-- We all stand on the shoulders of giants, please link all the sources you used in to create this project. -->
-
-<!-- How about a license here? When in doubt use MIT. 📜  -->
+In week 1, I made my first prototype with the inspiration I have found. I made this prototype in Figma. I find it easier to make myself a complete design before starting coding, so I won't have to think about the design as much during the coding process. If I wouldn't do this, I usually end up feeling frustrated while coding, so that's why I decided to do this.

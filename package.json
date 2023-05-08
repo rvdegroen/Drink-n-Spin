@@ -1,0 +1,29 @@
+{
+	"name": "chat-bar",
+	"version": "1.0.0",
+	"description": "An application to chat with people in a virtual bar. ",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app.js",
+		"dev": "nodemon app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rvdegroen/Chat-Bar.git"
+	},
+	"author": "Roshnie de Groen",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/rvdegroen/Chat-Bar/issues"
+	},
+	"homepage": "https://github.com/rvdegroen/Chat-Bar#readme",
+	"dependencies": {
+		"ejs": "^3.1.9",
+		"express": "^4.18.2",
+		"socket.io": "^4.6.1"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.22"
+	}
+}
