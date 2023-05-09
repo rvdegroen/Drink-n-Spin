@@ -11,6 +11,10 @@ body {
 	color: white;
 }
 
+.hidden {
+	display: none;
+}
+
 // homepage
 #homepage {
 	display: flex;
@@ -21,28 +25,95 @@ body {
 	overflow: hidden;
 	gap: 2em;
 
+	h1 {
+		margin-bottom: 1em;
+		text-align: center;
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	button:hover,
+	a:hover {
+		filter: brightness(90%) saturate(3);
+	}
+
+	.overview_buttons {
+		display: flex;
+		flex-direction: column;
+		font-size: 1em;
+		gap: 2em;
+
+		.primary_button {
+			background-color: #7a7aff;
+			color: white;
+			border: none;
+			font-size: 1em;
+			font-weight: bolder;
+			border-radius: 0.4em;
+			height: 2.5em;
+			width: 12em;
+			margin: 0 auto;
+		}
+
+		.secondary_button {
+			background-color: white;
+			color: #7a7aff;
+			border: none;
+			font-size: 1em;
+			font-weight: bolder;
+			border-radius: 0.4em;
+			height: 2.5em;
+			width: 12em;
+			margin: 0 auto;
+		}
+	}
+
 	form {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		gap: 2em;
 
 		input {
-			padding: 0.8em;
+			padding: 0.7em;
 			text-align: center;
 			border-radius: 2em;
 			border: none;
+			font-weight: bold;
+			font-size: 1em;
 		}
 
 		div {
 			display: flex;
 			justify-content: center;
+			gap: 1em;
+			flex-wrap: wrap;
 
 			.primary_button {
 				color: #ffffff;
 				background-color: #7a7aff;
-				padding: 0.5em 2em;
+				text-align: center;
+				width: 7em;
+				height: 2em;
 				border: none;
-				border-radius: 0.1em;
+				border-radius: 0.3em;
+				font-size: 1em;
+			}
+
+			.tertiary_button {
+				color: #ffffff;
+				background-color: #323239;
+				border: none;
+				text-align: center;
+				width: 7em;
+				height: 2em;
+				border-radius: 0.3em;
+				font-size: 1em;
+				text-decoration: none;
+				line-height: 1.8em;
+				border: 1px solid white;
 			}
 		}
 	}
