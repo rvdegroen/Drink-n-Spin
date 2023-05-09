@@ -1,2 +1,3 @@
 // IMPORTS
-// import * as username from './username.js';
+import * as chat from './chat.js';
+import * as canvas from './canvas.js';

@@ -211,6 +211,12 @@ body {
 		align-items: center;
 		padding: 2em;
 
+		canvas {
+			background-color: #393941;
+			width: 30vw;
+			border-radius: 0.5em;
+		}
+
 		#singular__player {
 			font-weight: bolder;
 		}
