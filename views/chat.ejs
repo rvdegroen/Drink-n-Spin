@@ -5,11 +5,15 @@
 		<script src="./scripts/chat.js" defer type="module"></script>
 	</head>
 	<body>
-		<ul id="messages"></ul>
-		<form id="form" action="">
-			<input id="input" autocomplete="off" />
-			<button>Send</button>
-		</form>
+		<main id="chatpage">
+			<div id="chat">
+				<ul id="messages"></ul>
+				<form id="form" action="">
+					<input id="input" autocomplete="off" />
+					<button><img src="/icons/send.svg" alt="send message" /></button>
+				</form>
+			</div>
+		</main>
 		<script src="/socket.io/socket.io.js"></script>
 	</body>
 </html>
