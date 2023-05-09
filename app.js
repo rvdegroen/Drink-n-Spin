@@ -1,7 +1,7 @@
 // IMPORTS src: https://socket.io/get-started/chat
-const express = require("express");
-const http = require("http");
-const { Server } = require("socket.io");
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
 
 // VARIABLES
 const app = express();
@@ -10,23 +10,30 @@ const port = process.env.PORT || 4848;
 const io = new Server(server);
 
 // MIDDLEWARE EXPRESS
-app.set("views", "./views");
-app.set("view engine", "ejs");
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
-app.use(express.static("public"));
+app.use(express.static('public'));
 
-app.get("/", function (req, res) {
-	res.render("index");
+// ROUTES
+app.get('/', function (req, res) {
+	res.render('index');
+});
+
+app.get('/chat', function (req, res) {
+	res.render('chat');
 });
 
 // SOCKET IO EVENTS
-io.on("connection", (socket) => {
-	console.log("a user connected");
-	socket.on("message", (message) => {
-		io.emit("message", message);
+
+// emits message to every user's client
+io.on('connection', (socket) => {
+	console.log('a user connected');
+	socket.on('message', (message) => {
+		io.emit('message', message);
 	});
-	socket.on("disconnect", () => {
-		console.log("a user disconnected");
+	socket.on('disconnect', () => {
+		console.log('a user disconnected');
 	});
 });
 
