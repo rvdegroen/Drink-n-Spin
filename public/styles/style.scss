@@ -2,4 +2,117 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+	background-color: #2a2a31;
+	color: white;
+}
+
+// homepage
+#homepage {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	gap: 2em;
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+
+		input {
+			padding: 0.8em;
+			text-align: center;
+			border-radius: 2em;
+			border: none;
+		}
+
+		div {
+			display: flex;
+			justify-content: center;
+
+			.primary_button {
+				color: #ffffff;
+				background-color: #7a7aff;
+				padding: 0.5em 2em;
+				border: none;
+				border-radius: 0.1em;
+			}
+		}
+	}
+}
+
+// chat page
+#chatpage {
+	background-color: #2a2a31;
+
+	// chat div
+	#chat {
+		width: 50vw;
+		background-color: #323239;
+		position: absolute;
+		right: 0;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		padding: 2em;
+		// overflow: hidden;
+
+		// ul with messages
+		#messages {
+			width: 100%;
+			padding: 4.5em 2em !important;
+			gap: 0.2em;
+			z-index: 0;
+			list-style: none;
+			position: absolute;
+			padding-bottom: 2em;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		form {
+			z-index: 1;
+			display: flex;
+			width: 100%;
+			gap: 1em;
+			position: relative;
+
+			input {
+				flex-grow: 1;
+				background-color: #393941;
+				border: none;
+				height: 4em;
+				color: white;
+				padding: 1em;
+				border-radius: 0.4em;
+
+				&:focus {
+					border: 1px solid #7a7aff;
+					outline: none;
+					border-radius: 0.4em;
+				}
+			}
+
+			button {
+				position: absolute;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				border: none;
+				background: none;
+				padding: 1em;
+				cursor: pointer;
+			}
+		}
+	}
 }
