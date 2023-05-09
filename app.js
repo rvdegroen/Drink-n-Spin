@@ -21,17 +21,23 @@ app.get('/', function (req, res) {
 });
 
 app.get('/chat', function (req, res) {
-	res.render('chat');
+	// username is a queryparam
+	const { username } = req.query;
+	// give chat.ejs, username variable
+	res.render('chat', { username });
 });
 
 // SOCKET IO EVENTS
 
-// emits message to every user's client
 io.on('connection', (socket) => {
 	console.log('a user connected');
+
+	// emits message to every user's client
 	socket.on('message', (message) => {
 		io.emit('message', message);
 	});
+
+	// user disconnected
 	socket.on('disconnect', () => {
 		console.log('a user disconnected');
 	});
