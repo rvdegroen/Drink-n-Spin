@@ -4,8 +4,9 @@
 		<%- include('partials/head.ejs') %>
 	</head>
 	<body>
-		<form id="username" action="/chat">
-			<input id="inputUsername" autocomplete="off" />
+		<ul id="messages"></ul>
+		<form id="form" action="">
+			<input id="input" autocomplete="off" />
 			<button>Send</button>
 		</form>
 		<script src="/socket.io/socket.io.js"></script>
