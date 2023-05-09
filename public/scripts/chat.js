@@ -7,6 +7,8 @@ const messages = document.getElementById('messages');
 // to put the username in params: see username.js
 const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
+const onePlayerText = document.getElementById('singular__player');
+const gameStart = document.getElementById('game__start');
 
 // SOCKET.IO
 
@@ -35,9 +37,14 @@ socket.on('message', (message) => {
 // receives from server the number of connectedClients
 socket.on('connectedClients', (connectedClients) => {
 	const userCount = document.getElementById('user__count');
-	if (connectedClients > 1) {
-		userCount.textContent = `${connectedClients} users online`;
-	} else {
+
+	if (connectedClients === 1) {
 		userCount.textContent = `${connectedClients} user online`;
+		onePlayerText.classList.remove('hidden');
+		gameStart.classList.add('hidden');
+	} else {
+		userCount.textContent = `${connectedClients} users online`;
+		onePlayerText.classList.add('hidden');
+		gameStart.classList.remove('hidden');
 	}
 });
