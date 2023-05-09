@@ -4,10 +4,15 @@
 		<%- include('partials/head.ejs') %>
 	</head>
 	<body>
-		<form id="username__form" action="">
-			<input id="username__input" autocomplete="off" />
-			<button type="submit">Send</button>
-		</form>
+		<main id="homepage">
+			<h1>Guess that Sketch</h1>
+			<form id="username__form" action="">
+				<input id="username__input" autocomplete="off" placeholder="Username" />
+				<div>
+					<button type="submit" class="primary_button">Enter</button>
+				</div>
+			</form>
+		</main>
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="/scripts/username.js"></script>
