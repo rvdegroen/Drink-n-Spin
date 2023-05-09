@@ -5,16 +5,40 @@
 	</head>
 	<body>
 		<main id="homepage">
-			<h1>Guess that Sketch</h1>
-			<form id="username__form" action="">
-				<input id="username__input" autocomplete="off" placeholder="Username" />
-				<div>
-					<button type="submit" class="primary_button">Enter</button>
+			<div class="overviewpage">
+				<h1>Guess that Sketch</h1>
+				<div class="overview_buttons">
+					<button id="create__room" class="primary_button">Create a room</button>
+					<button id="enter__room" class="secondary_button">Enter a room</button>
 				</div>
-			</form>
+			</div>
+
+			<div class="userpage hidden">
+				<h1>Create a room</h1>
+				<form id="username__form" action="">
+					<input id="username__input" autocomplete="off" placeholder="Username" />
+					<div>
+						<button type="submit" class="primary_button">Enter</button>
+						<a href="/" class="tertiary_button">Cancel</a>
+					</div>
+				</form>
+			</div>
+
+			<div class="roompage hidden">
+				<h1>Enter a room</h1>
+				<form id="username__form" action="">
+					<input id="username__input" autocomplete="off" placeholder="Username" />
+					<input id="gamepin__input" autocomplete="off" placeholder="Game pin" />
+					<div>
+						<button type="submit" class="primary_button">Enter</button>
+						<a href="/" class="tertiary_button">Cancel</a>
+					</div>
+				</form>
+			</div>
 		</main>
 
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="/scripts/username.js"></script>
+		<script src="/scripts/homepage.js"></script>
 	</body>
 </html>
