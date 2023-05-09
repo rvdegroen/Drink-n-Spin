@@ -31,3 +31,13 @@ socket.on('message', (message) => {
 	// automatically scroll down
 	window.scrollTo(0, document.body.scrollHeight);
 });
+
+// receives from server the number of connectedClients
+socket.on('connectedClients', (connectedClients) => {
+	const userCount = document.getElementById('user__count');
+	if (connectedClients > 1) {
+		userCount.textContent = `${connectedClients} users online`;
+	} else {
+		userCount.textContent = `${connectedClients} user online`;
+	}
+});
