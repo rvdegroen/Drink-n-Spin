@@ -123,6 +123,18 @@ body {
 #chatpage {
 	background-color: #2a2a31;
 
+	.chat_header {
+		display: flex;
+		width: 50vw;
+		right: 0;
+		position: absolute;
+		z-index: 1;
+		background-color: #323239;
+		list-style: none;
+		justify-content: space-between;
+		padding: 1em;
+	}
+
 	// chat div
 	#chat {
 		width: 50vw;
@@ -185,5 +197,17 @@ body {
 				cursor: pointer;
 			}
 		}
+	}
+
+	// game div
+	#game {
+		width: 50vw;
+		position: absolute;
+		left: 0;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 2em;
 	}
 }
