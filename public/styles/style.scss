@@ -133,6 +133,7 @@ body {
 		list-style: none;
 		justify-content: space-between;
 		padding: 1em 2em;
+		font-weight: bolder;
 	}
 
 	// chat div
@@ -209,5 +210,9 @@ body {
 		justify-content: center;
 		align-items: center;
 		padding: 2em;
+
+		#singular__player {
+			font-weight: bolder;
+		}
 	}
 }
