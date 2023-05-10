@@ -2,9 +2,13 @@
 <html lang="en">
 	<head>
 		<%- include('partials/head.ejs') %>
-		<script src="./scripts/main.js" defer type="module"></script>
 	</head>
 	<body>
+		<ul>
+			<% for (const cocktail of cocktails) { %>
+			<li><%= cocktail.name %></li>
+			<% } %>
+		</ul>
 		<main id="chatpage">
 			<ul class="chat_header">
 				<li>Game Pin: XSODS</li>
@@ -26,5 +30,7 @@
 			</div>
 		</main>
 		<script src="/socket.io/socket.io.js"></script>
+		<script src="/scripts/chat.js"></script>
+		<script src="/scripts/cocktails.js"></script>
 	</body>
 </html>
