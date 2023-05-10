@@ -58,13 +58,6 @@ app.get('/api/cocktail', async (req, res) => {
 	}
 	// response that the server sends to the client in cocktails.js
 	res.json(data);
-
-	/*
-	const headers = {
-			'Content-Type': 'application/json',
-			'X-Api-Key': apiKey,
-		};
-		*/
 });
 
 // FUNCTIONS
