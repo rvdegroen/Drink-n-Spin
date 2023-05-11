@@ -29,13 +29,13 @@ app.get('/chat', async function (req, res) {
 
 	// for book
 	const pages = ['Mojito Blanco', 'Bloody Mary'];
-	const data = await getCocktailByQuery('Mojito');
+	const cocktail = await getCocktailByQuery(pages[0]);
 	// promise.all takes all the promises, turns it into one promise and we can await it (because getcocktailbyquery is async, it returns promises)
 	// pages.map(name) turns an array of promises
 	const cocktails = await Promise.all(pages.map((name) => getCocktailByQuery(name)));
 
 	// give chat.ejs, username variable
-	res.render('chat', { username, cocktails });
+	res.render('chat', { username, cocktail });
 });
 
 // api from my own server

@@ -4,11 +4,6 @@
 		<%- include('partials/head.ejs') %>
 	</head>
 	<body>
-		<ul>
-			<% for (const cocktail of cocktails) { %>
-			<li><%= cocktail.name %></li>
-			<% } %>
-		</ul>
 		<main id="chatpage">
 			<ul class="chat_header">
 				<li>Game Pin: XSODS</li>
@@ -18,7 +13,9 @@
 				<p id="singular__player">Waiting for more players...</p>
 
 				<div id="game__start">
-					<canvas id="canvas" width="400" height="400"></canvas>
+					<div>
+						<h2><%= cocktail.name %></h2>
+					</div>
 				</div>
 			</div>
 			<div id="chat">
