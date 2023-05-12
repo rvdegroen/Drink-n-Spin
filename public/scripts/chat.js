@@ -34,6 +34,7 @@ socket.on('message', (message) => {
 	window.scrollTo(0, document.body.scrollHeight);
 });
 
+// receives history
 socket.on('history', (history) => {
 	history.forEach((message) => {
 		addMessage(message);

@@ -26,7 +26,7 @@ What I haven't been able to finish:
 
 # Live demo
 
-This is the link to the live demo of this application: https://drink-n-spin.adaptable.app/
+This is the link to the live demo of this application: https://the-mixologist-s-den.adaptable.app
 
 # Installation
 
@@ -42,4 +42,4 @@ To install the application locally you can follow these next steps:
 
 To read more about my process and life data cycle please visit my wiki:
 
-https://github.com/rvdegroen/Drink-n-Spin/wiki
+https://github.com/rvdegroen/The-Mixologist-s-Den/wiki
