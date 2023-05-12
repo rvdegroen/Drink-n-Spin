@@ -26,7 +26,7 @@ What I haven't been able to finish:
 
 # Live demo
 
-This is the link to the live demo of this application:
+This is the link to the live demo of this application: https://drink-n-spin.adaptable.app/
 
 # Installation
 
@@ -35,6 +35,8 @@ To install the application locally you can follow these next steps:
 1. Clone the repository with `git clone [LINK]`
 2. Go into the folder that you cloned and open the project in your code editor
 3. Install the dependencies with `npm i` in the terminal
+4. Create a `.env` file for the API_KEY
+5. Add API_KEY = [your API key] in your `.env` file from https://api-ninjas.com/api/cocktail
 
 # Process
 
