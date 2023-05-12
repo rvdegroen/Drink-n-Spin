@@ -214,5 +214,39 @@ body {
 		#singular__player {
 			font-weight: bolder;
 		}
+
+		.book__page {
+			display: none;
+			flex-direction: column;
+		}
+
+		.book__page.active {
+			display: flex;
+		}
+
+		.book__controls {
+			display: flex;
+			align-items: center;
+			gap: 16px;
+
+			h2 {
+				text-transform: capitalize;
+			}
+
+			button {
+				width: 20px;
+				height: 20px;
+				border-radius: 100%;
+				border: 1px solid #32ffb5;
+				color: #32ffb5;
+				background: transparent;
+			}
+
+			button:hover {
+				cursor: pointer;
+				border: 1px solid #2cca90;
+				color: #2cca90;
+			}
+		}
 	}
 }

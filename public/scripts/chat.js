@@ -34,6 +34,21 @@ socket.on('message', (message) => {
 	window.scrollTo(0, document.body.scrollHeight);
 });
 
+socket.on('history', (history) => {
+	history.forEach((message) => {
+		addMessage(message);
+	});
+});
+
+function addMessage(message) {
+	messages.appendChild(
+		Object.assign(document.createElement('li'), {
+			textContent: `${message.username}: ${message.message}`,
+		})
+	);
+	messages.scrollTop = messages.scrollHeight;
+}
+
 // receives from server the number of connectedClients
 socket.on('connectedClients', (connectedClients) => {
 	const userCount = document.getElementById('user__count');
@@ -48,3 +63,45 @@ socket.on('connectedClients', (connectedClients) => {
 		gameStart.classList.remove('hidden');
 	}
 });
+
+// Recipes
+const pages = document.querySelectorAll('.book__page');
+
+let page = 0;
+socket.on('get-page', (serverPage) => {
+	page = serverPage;
+
+	if (pages.length > 0) {
+		pages[page].classList.add('active');
+	}
+});
+socket.emit('get-page');
+
+function goNextPage() {
+	socket.emit('next-page');
+}
+
+function nextPage() {
+	pages[page].classList.remove('active');
+	page++;
+	if (page >= pages.length) {
+		page = page % pages.length;
+	}
+	pages[page].classList.add('active');
+}
+
+function goPreviousPage() {
+	socket.emit('previous-page');
+}
+
+function previousPage() {
+	pages[page].classList.remove('active');
+	page--;
+	if (page < 0) {
+		page = pages.length + page;
+	}
+	pages[page].classList.add('active');
+}
+
+socket.on('next-page', nextPage);
+socket.on('previous-page', previousPage);

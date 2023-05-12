@@ -10,7 +10,13 @@ const app = express();
 const server = http.createServer(app);
 const port = process.env.PORT || 4848;
 const io = new Server(server);
+
+const historySize = 50;
+let history = [];
+
 let connectedClients = 0;
+const pages = ['Mojito Blanco', 'Bloody Mary', 'Cosmopolitan', 'Sex on the Beach'];
+let page = 0;
 
 // MIDDLEWARE EXPRESS
 app.set('views', './views');
@@ -28,14 +34,16 @@ app.get('/chat', async function (req, res) {
 	const { username } = req.query;
 
 	// for book
-	const pages = ['Mojito Blanco', 'Bloody Mary'];
-	const cocktail = await getCocktailByQuery(pages[0]);
+	//const cocktail = await getCocktailByQuery(pages[0]);
+
 	// promise.all takes all the promises, turns it into one promise and we can await it (because getcocktailbyquery is async, it returns promises)
 	// pages.map(name) turns an array of promises
 	const cocktails = await Promise.all(pages.map((name) => getCocktailByQuery(name)));
 
+	// console.log('cocktails', cocktails);
+
 	// give chat.ejs, username variable
-	res.render('chat', { username, cocktail });
+	res.render('chat', { username, cocktails });
 });
 
 // api from my own server
@@ -86,9 +94,36 @@ io.on('connection', (socket) => {
 	// with every connection, increment users
 	connectedClients++;
 
+	io.emit('history', history);
+
 	// emits message to every user's client
 	socket.on('message', (message) => {
+		while (history.length > historySize) {
+			history.shift();
+		}
+		history.push(message);
+
 		io.emit('message', message);
+	});
+
+	socket.on('get-page', () => {
+		socket.emit('get-page', page);
+	});
+
+	socket.on('next-page', () => {
+		page++;
+		if (page >= pages.length) {
+			page = page % pages.length;
+		}
+		io.emit('next-page');
+	});
+
+	socket.on('previous-page', () => {
+		page--;
+		if (page < 0) {
+			page = pages.length + page;
+		}
+		io.emit('previous-page');
 	});
 
 	// user disconnected
