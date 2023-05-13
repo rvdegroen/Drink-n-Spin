@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('node-fetch');
 
 // IMPORTS src: https://socket.io/get-started/chat
 const express = require('express');
