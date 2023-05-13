@@ -26,7 +26,7 @@ What I haven't been able to finish:
 
 # Live demo
 
-This is the link to the live demo of this application: https://the-mixologist-s-den.adaptable.app
+This is the link to the live demo of this application: https://the-mixologist-s-den-production.up.railway.app/
 
 # Installation
 
