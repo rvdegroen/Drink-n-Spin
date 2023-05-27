@@ -123,6 +123,10 @@ body {
 #chatpage {
 	background-color: #2a2a31;
 
+	h1 {
+		margin-bottom: 1em;
+	}
+
 	.chat_header {
 		display: flex;
 		width: 50vw;
@@ -210,13 +214,36 @@ body {
 		// align-items: center;
 		padding: 2em;
 
+		.right__column {
+			margin-left: 1.5em;
+
+			h3 {
+				display: flex;
+				flex-grow: 1;
+				justify-content: center;
+				padding-bottom: 0.2em;
+				border-bottom: 2px #5e5e5e solid;
+				margin-bottom: 10px;
+
+				// &:hover {
+				// 	transform: scaleY(2px);
+				// 	border-bottom: 3px #2ec891 solid;
+				// 	margin-bottom: -1px;
+				// 	cursor: pointer;
+				// }
+			}
+		}
+
+		#cocktail__img {
+			border-radius: 10em;
+		}
+
 		#singular__player {
 			font-weight: bolder;
 		}
 
 		.book__page {
 			display: none;
-			flex-direction: column;
 		}
 
 		.book__page.active {
@@ -226,25 +253,22 @@ body {
 		.book__controls {
 			display: flex;
 			align-items: center;
-			gap: 16px;
+			gap: 10px;
 
 			h2 {
 				text-transform: capitalize;
+				margin-left: 10px;
 			}
 
 			button {
 				width: 20px;
-				height: 20px;
-				border-radius: 100%;
-				border: 1px solid #32ffb5;
-				color: #32ffb5;
+				border: none;
 				background: transparent;
-			}
 
-			button:hover {
-				cursor: pointer;
-				border: 1px solid #2cca90;
-				color: #2cca90;
+				&:hover {
+					cursor: pointer;
+					opacity: 50%;
+				}
 			}
 		}
 		// d3 spinner

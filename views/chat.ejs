@@ -17,20 +17,29 @@
 						<h1>Cocktail recipes for the drinking game</h1>
 						<% for (const cocktail of cocktails) { %>
 						<div class="book__page">
-							<div class="book__controls">
-								<button onclick="goPreviousPage()">&laquo;</button>
-								<h2><%= cocktail.name %></h2>
-								<button onclick="goNextPage()">&raquo;</button>
-							</div>
-							<div>
-								<img src="https://placehold.co/228x228" alt="" />
-								<div>
-									<h2>Instructions</h2>
-									<p><%= cocktail.instructions %></p>
+							<div class="left__column">
+								<div class="book__controls">
+									<button onclick="goPreviousPage()">
+										<img src="./icons/left.svg" alt="previous cocktail" />
+									</button>
+									<h2><%= cocktail.name %></h2>
+									<button onclick="goNextPage()">
+										<img src="./icons/right.svg" alt="next cocktail" />
+									</button>
 								</div>
 								<div>
-									<h2>Ingredients</h2>
-									<p><%= cocktail.ingredients %></p>
+									<img id="cocktail__img" src="https://placehold.co/228x228" alt="cocktail image" />
+								</div>
+							</div>
+
+							<div class="right__column">
+								<div>
+									<h3 id="instructions__button">Instructions</h3>
+									<p id="cocktail__instructions"><%= cocktail.instructions %></p>
+								</div>
+								<div>
+									<h3 id="ingredients__button">Ingredients</h3>
+									<p id="cocktail__ingredients"><%= cocktail.ingredients %></p>
 								</div>
 							</div>
 						</div>

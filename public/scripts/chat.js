@@ -9,6 +9,25 @@ const urlParams = new URLSearchParams(window.location.search);
 const username = urlParams.get('username');
 const onePlayerText = document.getElementById('singular__player');
 const gameStart = document.getElementById('game__start');
+// const instructionsButton = document.getElementById('instructions__button');
+// const ingredientsButton = document.getElementById('ingredients__button');
+// const instructions = document.getElementById('cocktail__instructions');
+// const ingredients = document.getElementById('cocktail__ingredients');
+
+// default
+// ingredients.classList.add('hidden');
+// instructions.classList.remove('hidden');
+
+// // cocktail things
+// instructionsButton.addEventListener('click', function () {
+// 	ingredients.classList.add('hidden');
+// 	instructions.classList.remove('hidden');
+// });
+
+// ingredientsButton.addEventListener('click', function () {
+// 	instructions.classList.add('hidden');
+// 	ingredients.classList.remove('hidden');
+// });
 
 // SOCKET.IO
 
