@@ -199,7 +199,6 @@ body {
 			}
 		}
 	}
-
 	// game div
 	#game {
 		width: 50vw;
@@ -207,8 +206,8 @@ body {
 		left: 0;
 		height: 100vh;
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		// justify-content: center;
+		// align-items: center;
 		padding: 2em;
 
 		#singular__player {
@@ -247,6 +246,62 @@ body {
 				border: 1px solid #2cca90;
 				color: #2cca90;
 			}
+		}
+		// d3 spinner
+
+		// d3
+		#chart {
+			top: 0;
+			left: 0;
+			max-width: 10vw;
+			width: 500px;
+			height: 500px;
+			user-select: none;
+		}
+
+		.chartholder + g {
+			fill: #fff;
+		}
+
+		text {
+			font-family: Helvetica, Arial, sans-serif;
+			font-size: 30px;
+			fill: #2d9396;
+			pointer-events: none;
+		}
+		g.slice text {
+			font-size: 11px;
+			fill: #000;
+		}
+
+		g.slice:nth-of-type(1) path {
+			fill: #94d2bd;
+		}
+		g.slice:nth-of-type(2) path {
+			fill: #2d9396;
+		}
+		g.slice:nth-of-type(3) path {
+			fill: #195f73;
+		}
+		g.slice:nth-of-type(4) path {
+			fill: #ae2012;
+		}
+		g.slice:nth-of-type(5) path {
+			fill: #bb3e03;
+		}
+		g.slice:nth-of-type(6) path {
+			fill: #ca6701;
+		}
+		g.slice:nth-of-type(7) path {
+			fill: #ee9b00;
+		}
+		g.slice:nth-of-type(8) path {
+			fill: #7c9c10;
+		}
+
+		circle {
+			fill: #fff;
+			cursor: pointer;
 		}
 	}
 }

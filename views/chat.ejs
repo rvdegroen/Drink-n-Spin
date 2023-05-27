@@ -13,27 +13,30 @@
 				<p id="singular__player">Waiting for more players...</p>
 
 				<div id="game__start">
-					<h1>Cocktail recipes for the drinking game</h1>
-					<% for (const cocktail of cocktails) { %>
-					<div class="book__page">
-						<div class="book__controls">
-							<button onclick="goPreviousPage()">&laquo;</button>
-							<h2><%= cocktail.name %></h2>
-							<button onclick="goNextPage()">&raquo;</button>
-						</div>
-						<div>
-							<img src="https://placehold.co/228x228" alt="" />
-							<div>
-								<h2>Instructions</h2>
-								<p><%= cocktail.instructions %></p>
+					<div id="cocktails">
+						<h1>Cocktail recipes for the drinking game</h1>
+						<% for (const cocktail of cocktails) { %>
+						<div class="book__page">
+							<div class="book__controls">
+								<button onclick="goPreviousPage()">&laquo;</button>
+								<h2><%= cocktail.name %></h2>
+								<button onclick="goNextPage()">&raquo;</button>
 							</div>
 							<div>
-								<h2>Ingredients</h2>
-								<p><%= cocktail.ingredients %></p>
+								<img src="https://placehold.co/228x228" alt="" />
+								<div>
+									<h2>Instructions</h2>
+									<p><%= cocktail.instructions %></p>
+								</div>
+								<div>
+									<h2>Ingredients</h2>
+									<p><%= cocktail.ingredients %></p>
+								</div>
 							</div>
 						</div>
+						<% } %>
 					</div>
-					<% } %>
+					<div id="chart"></div>
 				</div>
 			</div>
 			<div id="chat">
@@ -44,8 +47,9 @@
 				</form>
 			</div>
 		</main>
+		<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script src="/scripts/chat.js"></script>
-		<script src="/scripts/cocktails.js"></script>
+		<script src="/scripts/chart.js"></script>
 	</body>
 </html>
