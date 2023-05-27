@@ -275,12 +275,10 @@ body {
 
 		// d3
 		#chart {
-			top: 0;
-			left: 0;
-			max-width: 10vw;
 			width: 500px;
 			height: 500px;
 			user-select: none;
+			margin: 0 auto !important;
 		}
 
 		.chartholder + g {
