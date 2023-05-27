@@ -110,6 +110,11 @@ io.on('connection', (socket) => {
 		socket.emit('get-page', page);
 	});
 
+	socket.on('spin', () => {
+		const rng = Math.floor(Math.random() * 1440 + 360);
+		io.emit('spin', rng);
+	});
+
 	socket.on('next-page', () => {
 		page++;
 		if (page >= pages.length) {

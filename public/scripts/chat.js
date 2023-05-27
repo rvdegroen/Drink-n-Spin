@@ -1,6 +1,7 @@
 // when it runs, it console.logs that the user connected from the server
 // VARIABLES
 const socket = io();
+window.socket = socket;
 const form = document.getElementById('form');
 const input = document.getElementById('input');
 const messages = document.getElementById('messages');

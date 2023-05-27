@@ -64,17 +64,24 @@ arcs
 		return data[i].label;
 	});
 
-container.on('click', spin);
+container.on('click', () => {
+	window.socket.emit('spin');
+});
 
-function spin() {
+window.socket.on('spin', (rng) => {
+	spin(rng);
+});
+
+function spin(rng) {
 	container.on('click', null);
 	if (oldpick.length == data.length) {
 		console.log('done');
 		container.on('click', null);
 		return;
 	}
-	const ps = 360 / data.length,
-		rng = Math.floor(Math.random() * 1440 + 360);
+	const ps = 360 / data.length;
+
+	// rng = Math.floor(Math.random() * 1440 + 360);
 
 	rotation = Math.round(rng / ps) * ps;
 
@@ -93,8 +100,11 @@ function spin() {
 		.attrTween('transform', rotTween)
 		.each('end', function () {
 			oldrotation = rotation;
-			console.log(data[picked].value);
-			container.on('click', spin);
+			// console.log(data[picked].value);
+			// container.on('click', spin);
+			container.on('click', () => {
+				window.socket.emit('spin');
+			});
 		});
 }
 
