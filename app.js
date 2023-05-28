@@ -14,6 +14,8 @@ const io = new Server(server);
 const historySize = 50;
 let history = [];
 
+let spinning = false;
+
 let connectedClients = 0;
 const pages = ['Mojito Blanco', 'Bloody Mary', 'Cosmopolitan', 'Sex on the Beach'];
 let page = 0;
@@ -54,8 +56,8 @@ app.get('/api/cocktail', async (req, res) => {
 
 	const response = await fetch(`https://api.api-ninjas.com/v1/cocktail?name=${name}`, {
 		headers: {
-			'X-Api-Key': process.env.API_KEY,
-		},
+			'X-Api-Key': process.env.API_KEY
+		}
 	});
 	const data = await response.json();
 
@@ -72,8 +74,8 @@ app.get('/api/cocktail', async (req, res) => {
 async function getCocktailByQuery(query) {
 	const response = await fetch(`https://api.api-ninjas.com/v1/cocktail?name=${query}`, {
 		headers: {
-			'X-Api-Key': process.env.API_KEY,
-		},
+			'X-Api-Key': process.env.API_KEY
+		}
 	});
 	const data = await response.json();
 
@@ -88,7 +90,6 @@ async function getCocktailByQuery(query) {
 }
 
 // SOCKET IO EVENTS
-
 io.on('connection', (socket) => {
 	console.log('a user connected');
 	// with every connection, increment users
@@ -126,6 +127,19 @@ io.on('connection', (socket) => {
 		io.emit('previous-page');
 	});
 
+	socket.on('spin-request', () => {
+		if (!spinning) {
+			spinning = true;
+			const result = spin();
+
+			io.emit('spin-result', result);
+
+			setTimeout(() => {
+				spinning = false;
+			}, 2000);
+		}
+	});
+
 	// user disconnected
 	socket.on('disconnect', () => {
 		console.log('a user disconnected');
@@ -139,4 +153,26 @@ io.on('connection', (socket) => {
 	io.emit('connectedClients', connectedClients);
 });
 
-server.listen(port);
+function spin() {
+	const data = [
+		{ label: 'drink', value: 1 },
+		{ label: 'person to the right drinks', value: 2 },
+		{ label: 'everyone drinks', value: 3 },
+		{ label: 'choose someone to drink', value: 4 },
+		{ label: 'free', value: 5 },
+		{ label: 'person to your left drinks', value: 6 },
+		{ label: 'choose someone to drink with', value: 7 },
+		{ label: 'chug', value: 8 }
+	];
+
+	const ps = 360 / data.length;
+	const rng = Math.floor(Math.random() * 1440 + 360);
+	const rotation = Math.round(rng / ps) * ps;
+	picked = (data.length + Math.round(data.length - (rotation % 360) / ps)) % data.length;
+
+	return { rotation, picked };
+}
+
+server.listen(port, () => {
+	console.log(`Server is running on http://localhost:${port}`);
+});
