@@ -38,8 +38,8 @@ To install the application locally you can follow these next steps:
 4. Create a `.env` file for the API_KEY
 5. Add API_KEY = [your API key] in your `.env` file from https://api-ninjas.com/api/cocktail
 
-# Process
+# Wiki
 
 To read more about my process and life data cycle please visit my wiki:
 
-https://github.com/rvdegroen/The-Mixologist-s-Den/wiki
+https://github.com/rvdegroen/Drink-n-Spin/wiki
