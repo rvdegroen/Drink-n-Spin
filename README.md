@@ -4,9 +4,7 @@ The source code is distributed under the GPL-3.0 license. See LICENSE.md for mor
 
 # Concept
 
-My concept is that when you're in the chatroom, you can look together through the cocktails and chat about them. This serves as a cocktail menu and everyone can look through the cocktail at the same time.
-
-I actually wanted to make a drinking game, but since I wasn't able to finish all functionalities in time, I decided that I'll keep it on the menu.
+My concept is a drinking game and you can also look together through the cocktails menu and choose a drink for the game to make. Everyone will see the same drink, so only one person has to look.
 
 ## Functionalities
 
