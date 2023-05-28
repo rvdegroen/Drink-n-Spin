@@ -17,12 +17,12 @@ What I finished:
 - being able to go look at the same cocktails as others
 - seeing how many people are online
 - have the game starting when there are at least 2 players
+- spin the spinner for the drinking game
+- Show everyone the same spinner
 
 What I haven't been able to finish:
 
-- add a spinner for the drinking game
 - have a certain player be to only one who can spin at a time
-- have other users see the spinner at the same time
 
 # Live demo
 
